@@ -20,5 +20,12 @@ Output: 3
 Example 3:
 Input: password = "1337C0d3"
 Output: 0
+
+
+Assigment19-8Ex.py --
+A palindrome is a number, a word, or a sentence that remains identical whether read from left to right or from right to left. For example, each of the following five-digit numbers is a palindrome: 12321, 55555, 45554, 11611. Write a program capable of reading a positive integer (greater than 0) with five digits, and of determining whether this integer is a palindrome.
+
+
+
  
 

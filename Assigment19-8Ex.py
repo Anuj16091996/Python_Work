@@ -20,7 +20,7 @@ def GenratePlainDromes(n):
 
 
 def main():
-    n=123
+    n=12323
     GenratePlainDromes(n)
 
 

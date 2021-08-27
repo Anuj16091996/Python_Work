@@ -9,8 +9,8 @@
 # myfunc(mylist)
 # print(newList)
 
-
-print (hex(6562))
+#
+# print (hex(6562))
 
 # while(isinstance(mylist,list)):
 

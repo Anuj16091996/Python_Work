@@ -6,6 +6,8 @@ def PassCondition():
     number=6 #For Pending Steps
     checkcon=0
     password=str(input("Enter The Password -:  "))
+
+
     checklenght=len(password)
 
     for i in range(0,len(password)):

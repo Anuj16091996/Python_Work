@@ -1,3 +1,18 @@
+# mylist = [12,[1,2],[[7,8],[5,4]]]
+# newList = []
+# def myfunc(i):
+#     if isinstance(i,list)==False:
+#         newList.append(i)
+#     else:
+#         for j in i:
+#             myfunc(j)
+# myfunc(mylist)
+# print(newList)
+
+#
+# print (hex(6562))
+
+# while(isinstance(mylist,list)):
 
 # #this app will convert the number of meters to centimers
 # def main():

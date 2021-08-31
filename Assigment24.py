@@ -22,9 +22,9 @@ def MaximumNumber(Data):
                 else:
                     slope=int(j[1]-i[1]/(j[0]-i[0]))
 
-                    Dict[slope] = Dict.get(slope,0)+1
+                Dict[slope] = Dict.get(slope,0)+1
 
-                    cur_max=max(cur_max, Dict[slope])
+                cur_max=max(cur_max, Dict[slope])
             else:
                 dups+=1
 

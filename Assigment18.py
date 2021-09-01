@@ -2,7 +2,7 @@ from random import randint
 FoundList=[]
 
 def CreatingRandomIndex():
-    Rows=5
+    Rows=randint(1,10)
     Colum=randint(1,10)
     x=[[randint(0,1) for _ in range(Rows)] for _ in range(Colum)] #This is Colum
     # x=[[1,0,1,0,0],[1,0,1,1,1],[1,1,1,1,1],[1,0,0,1,0]]

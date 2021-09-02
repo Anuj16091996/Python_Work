@@ -1,12 +1,15 @@
 from random import randint
 import random
 
+
+# For Creating Random Number
 def CreatingRandomIndex():
     Rows=randint(1,10)
     x=[randint(1,10) for _ in range(Rows)] #This is Colum
-
     return x
 
+
+# For Checking Total of it
 def CheckingTotal(Numbers):
     Total=0
     for j in Numbers:
@@ -15,8 +18,13 @@ def CheckingTotal(Numbers):
     return Total
 
 
+
+
+# For Checking That Number Has The Same Median Or Not
+# And Printing That To Consoloe And returing a true or false value
 def CheckArray(NumberList,Average):
     Len=len(NumberList)
+
     if(Len % 2!=0):
          Len=int(len(NumberList)/2)+1
 
@@ -30,6 +38,29 @@ def CheckArray(NumberList,Average):
             Num=NumberList[i]
             Stack=[]
             Stack.append(i)
+
+
+
+            ToLimitSomeNumber=len(NumberList)
+
+            if(ToLimitSomeNumber==2 or ToLimitSomeNumber==1):
+                if ToLimitSomeNumber==1:
+                    return False
+                else:
+                    Array1=NumberList[0]
+                    Array2=NumberList[1]
+
+                    if(Array1==Array2):
+                        print("["+str(Array1)+"]")
+                        print("["+str(Array2)+"]")
+
+                        return True
+
+                    else:
+                        return False
+
+
+                break
 
             for j in range(i+1,Len):
 
@@ -45,15 +76,18 @@ def CheckArray(NumberList,Average):
             Num_Average=Num/Count
 
             if(Num_Average==Average):
-                print("You Are in First Array Match")
+                # print("You Are in First Array Match")
                 Number2=NumberList.copy()
-                print(Number2)
+                # print(Number2)
                 for re in range(0,len(Stack)):
                     Number=NumberList[re]
                     Number2.remove(Number)
+                Number3=[]
+                for i in  Stack:
 
-
-                
+                    Number3.append(NumberList[i])
+                # print(NumberList)
+                print(Number3)
                 print(Number2)
                 return Stack
                 break
@@ -66,36 +100,41 @@ def CheckArray(NumberList,Average):
 
 
 
-
+# Genrting the Matrix from Random Values
+# and calling the Check Array Function
 def CheckTheNumber():
-    Numbers=[1,5,1,4,1,2]
+    Numbers=CreatingRandomIndex()
+    print(Numbers)
     FinalStatus=True
-    # print(Numbers)
+
     Total=CheckingTotal(Numbers)
     Average=Total/len(Numbers)
-    print(Average)
-    # print(Total)
+
     num=0
     Count_Times=0
     while num<=0:
 
         Check=CheckArray(Numbers,Average)
         len(Numbers)
-        # print(Check)
+
 
         if Check==False:
             random.shuffle(Numbers)
+            # print(Numbers)
             Count_Times+=1
             num=0
 
-        if Count_Times==len(Numbers):
-            FinalStatus=False
-            break
-
-        else:
+        else :
             num=1
             FinalStatus=True
             break
+
+
+        if Count_Times==50:
+            FinalStatus=False
+            break
+
+
 
     return FinalStatus
 
@@ -103,7 +142,10 @@ def CheckTheNumber():
 
 def Main():
     Value=CheckTheNumber()
-    print(Value)
+    if(Value==True):
+        print("The Above Numbers Has The Same Average")
+    else:
+        print("False")
 
 
 Main()

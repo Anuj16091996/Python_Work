@@ -103,7 +103,7 @@ def CheckArray(NumberList,Average):
 # Genrting the Matrix from Random Values
 # and calling the Check Array Function
 def CheckTheNumber():
-    Numbers=CreatingRandomIndex()
+    Numbers= [1,2,3,4,5,6]
     print(Numbers)
     FinalStatus=True
 
@@ -120,6 +120,7 @@ def CheckTheNumber():
 
         if Check==False:
             random.shuffle(Numbers)
+
             # print(Numbers)
             Count_Times+=1
             num=0
@@ -130,7 +131,7 @@ def CheckTheNumber():
             break
 
 
-        if Count_Times==50:
+        if Count_Times==510:
             FinalStatus=False
             break
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 bills = [[124, 48, 268, 180, 42], [77, 375, 110, 45]]
 tip = [[0.20, 0.15, 0.10], [0.20, 0.10, 0.25]]
 limitBill = [[50, 200], [100, 300]]
@@ -31,7 +30,6 @@ Calculator.calculateTip(bills[0], tip[0], limitBill[0])
 avarageBill(bills[0])
 print("\nThe value for the Mark's familly are: ")
 Calculator.calculateTip(bills[1], tip[1], limitBill[1])
-=======
 bills = [[124, 48, 268, 180, 42], [77, 375, 110, 45]]
 tip = [[0.20, 0.15, 0.10], [0.20, 0.10, 0.25]]
 limitBill = [[50, 200], [100, 300]]
@@ -64,5 +62,4 @@ Calculator.calculateTip(bills[0], tip[0], limitBill[0])
 avarageBill(bills[0])
 print("\nThe value for the Mark's familly are: ")
 Calculator.calculateTip(bills[1], tip[1], limitBill[1])
->>>>>>> 720ec857bc3540fccce47d65af3406fb7b5097e0
 avarageBill(bills[1])

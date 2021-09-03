@@ -1,42 +1,54 @@
-def reversePairs():
-    print("start")
-    nums = [2,4,3,5,1]
-    print(nums)
-    if (nums == None or len(nums) == 0):
-        print("return cero")
+import sys
+
+
+def reversePairs(nums):
+    res = mergesort(nums, 0, len(nums) - 1);
+    return res;
+
+
+def mergesort(nums, start, end):
+    if start >= end:
         return 0
-    print("nums: "+str(nums)+"left: "+str(0)+"right"+str(len(nums)-1))
-    return mergeSort(nums, 0, len(nums) - 1)
-
-def mergeSort (nums, left, right):
-    if left >= right:
-        return 0;
-    mid = left + ((right - left) >> 1)
-    return mergeSort(nums, left, mid) + mergeSort(nums, mid + 1, right) + merge(nums, left, mid, right)
-
-
-def merge(nums, left, mid, right):
-    helper = [right - left + 1]
-    i = 0; rst = 0
-    p1 = left; p2 = mid + 1; p = mid + 1
-    while p1 <= mid:
-         print("p1= "+str(p1))
-         print("p: " +str(p)+"<= right:"+str(right)+" and "+str(nums[p1])+"/2.0 >"+ str(nums[p]))
-         while (p <= right and (nums[p1] / 2.0) > nums[p]):
-             p+=1
-         rst += p - (mid + 1);
-         while (p2 <= right and nums[p1] > nums[p2]):
-             i+=1;p2+=1;p2+=1
-             helper[i] = nums[p2]
-         helper[i] = nums[p1]
-    while (p2 <= right):
-         i+=1
-         p2+=1
-         helper[i] = nums[p2]
-    for i in range(0,len(helper)):
-         nums[left + i] = helper[i]
-    print("rst:"+str(rst))
-    return 1;
+    mid = (end - start) / 2 + start;
+    res = mergesort(nums, start, mid) + mergesort(nums, mid + 1, end)
+    for i in range(start,mid):
+        j = mid + 1
+        while (j <= end and nums[i] / 2.0 > nums[j]):
+            j +=1
+        res += j - mid - 1
+    merge(nums, start, mid, mid + 1, end)
+    return res
 
 
-reversePairs()
+def merge(nums, s1, e1, s2, e2):
+    result = [e2 - s1 + 1];
+    i = s1, j = s2, k = 0;
+    while (i <= e1 or j <= e2):
+        a = sys.maxsize
+        b = sys.maxsize
+        if (i <= e1):
+            a = nums[i]
+        if (j <= e2):
+            b = nums[j]
+        if (a < b):
+            k+=1
+            result[k] = a
+            i +=1
+        elif a > b:
+            k+=1
+            result[k] = b
+            j +=1
+        else:
+            if j == e2 + 1 :
+                k+=1
+                result[k] = a
+                i +=1
+            else:
+                k+=1
+                result[k] = b
+                j +=1
+    for k in range(0, len(result)):
+        nums[s1 + k] = result[k]
+
+nums=[[1,3,2,3,1]]
+reversePairs(nums)

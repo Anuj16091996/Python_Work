@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# <<<<<<< HEAD
+>>>>>>> d8b7f391770b34159aeec2b72bf61fa33cef16e3
 def compoundInterest():
     amount = float(input('Please enter the amount: '))
     annualRate = float(input('Please enter the interest annual in percentage(%): '))

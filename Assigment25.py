@@ -17,7 +17,6 @@ class LinkedList:
         prev = None
         count = 0
 
-        # Reverse first k nodes of the linked list
         while current is not None and count < k:
             next = current.next
             current.next = prev

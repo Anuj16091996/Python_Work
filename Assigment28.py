@@ -33,6 +33,7 @@ def DecodingNumber(Num):
         # print(Number)
             Increment=Increment+1
             Lenght_Stack=Lenght_Stack-1
+        # print(Number)
 
         if(Number==i):
             FinalValues.append(Number)
@@ -52,7 +53,7 @@ def NearestVales(FinalValues):
 
 
 def Main():
-    Number=121
+    Number=789
     Stack=DecodingNumber(Number)
     Stack_Last_value=NearestVales(Stack)
 

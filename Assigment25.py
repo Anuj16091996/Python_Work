@@ -1,18 +1,59 @@
-arr=[1, 2, 3, 4, 5]
-k=3
-print(arr)
-n=len(arr)//k
-arr_Final=[]
-for i in range(n):
-    if k>1:
-        numbers = arr[0:k]
-    else:
-        numbers=arr[0:1]
-    for j in range(k):
-        arr.pop(0)
-    arr_Final.extend(numbers)
-    #print("arr: "+str(arr))
-    #print("Arr final: "+str(arr_Final))
-if len(arr)<k:
-    arr_Final.extend(arr)
-print("Result: "+str(arr_Final))
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def reverse(self, head, k):
+
+        if head == None:
+            return None
+        current = head
+        next = None
+        prev = None
+        count = 0
+
+        while current is not None and count < k:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+            count += 1
+        if next is not None:
+            head.next = self.reverse(next, k)
+        return prev
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def printList(self):
+        temp = self.head
+        while(temp):
+            print (temp.data)
+            temp = temp.next
+
+list = LinkedList()
+
+list.push(5)
+list.push(4)
+list.push(3)
+list.push(2)
+list.push(1)
+
+k=2
+print("linked list")
+list.printList()
+
+list.head = list.reverse(list.head, k)
+print("\nReversed list k="+str(k))
+list.printList()
+
+
+
+

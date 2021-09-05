@@ -110,7 +110,7 @@ def FindingThePossiblity(start,end):
 
 def Main():
     BeginWord="hit"
-    EndWord="cog"
+    EndWord="dog"
     Status=ToCheckForPresent(EndWord)
     if Status==True:
         Stack=FindingThePossiblity(BeginWord,EndWord)
